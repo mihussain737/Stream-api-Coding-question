@@ -56,5 +56,15 @@ public class First30 {
                 .findFirst()
                 .orElse(null));
 
+        l5.stream()
+                .filter(i -> i > 50)
+                .findFirst()
+                .ifPresent(System.out::println);
+
+        l5.stream()
+                .filter(i -> i > 50)
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("No value > 50"));
+
     }
 }
