@@ -1,9 +1,7 @@
 package StreamAPI;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 class Employee implements Comparable<Employee>{
     private String name;
@@ -78,7 +76,18 @@ public class First55 {
 //        53. Find duplicate elements in a list
 //        Input: [1, 2, 3, 2, 4, 1]
 //        Output: [1, 2]
-//
+        List<Integer> l3 = List.of(1, 2, 3, 2, 4, 1);
+
+        Set<Integer> seen = new HashSet<>();
+
+        List<Integer> duplicates = l3.stream()
+                .filter(n -> !seen.add(n))
+                .distinct()
+                .toList();
+
+        System.out.println(duplicates);
+
+
 //        54. Remove duplicates but preserve order
 //        Input: [1, 2, 3, 2, 1]
 //        Output: [1, 2, 3]
