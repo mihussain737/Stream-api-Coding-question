@@ -2,9 +2,10 @@ package StreamAPI;
 
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-class Employee{
+class Employee implements Comparable<Employee>{
     private String name;
     private int salary;
 
@@ -36,10 +37,18 @@ class Employee{
                 '}';
     }
 
+
+
     public Employee(String name, int salary) {
         this.name = name;
         this.salary = salary;
     }
+
+    @Override
+    public int compareTo(Employee employee) {
+        return this.name.compareTo(employee.name);
+    }
+
 }
 
 public class First55 {
@@ -58,6 +67,13 @@ public class First55 {
 //        52. Sort employees by name
 //        Input: [Emp("Zoe"), Emp("Alex")]
 //        Output: [Emp("Alex"), Emp("Zoe")]
+        List<Employee> l2=new ArrayList<>();
+        l2.add(new Employee("Zoe"));
+        l2.add(new Employee("Alex"));
+        List<Employee> l2a = l2.stream().sorted().toList();
+        System.out.println(l2a);
+
+        System.out.println(l2a.stream().sorted(Comparator.comparing(employee -> employee.getName())).toList());
 
 //        53. Find duplicate elements in a list
 //        Input: [1, 2, 3, 2, 4, 1]
