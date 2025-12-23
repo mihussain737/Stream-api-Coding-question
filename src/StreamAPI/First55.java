@@ -91,7 +91,14 @@ public class First55 {
 //        54. Remove duplicates but preserve order
 //        Input: [1, 2, 3, 2, 1]
 //        Output: [1, 2, 3]
-//
+        List<Integer> l4=List.of(1, 2, 3, 2, 1);
+//        List<Integer> list2 = l4.stream().distinct().toList();
+//        System.out.println(list2);
+        LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
+        for(int x:l4){
+            linkedHashSet.add(x);
+        }
+        System.out.println(linkedHashSet);
 //        55. Reverse a list using stream
 //        Input: [1, 2, 3, 4, 5]
 //        Output: [5, 4, 3, 2, 1]
