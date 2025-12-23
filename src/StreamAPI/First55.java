@@ -99,8 +99,12 @@ public class First55 {
             linkedHashSet.add(x);
         }
         System.out.println(linkedHashSet);
+
 //        55. Reverse a list using stream
 //        Input: [1, 2, 3, 4, 5]
 //        Output: [5, 4, 3, 2, 1]
+        List<Integer> l5=List.of(1, 2, 3, 4, 5);
+        List<Integer> list2 = l5.stream().sorted((a, b) -> b.compareTo(a)).toList();
+        System.out.println(list2);
     }
 }
