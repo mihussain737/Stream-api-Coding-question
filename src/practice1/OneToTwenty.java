@@ -111,6 +111,7 @@ public class OneToTwenty {
         Map<Boolean, List<Integer>> collect2 = l19.stream().collect(Collectors.groupingBy(a -> a % 2 == 0));
         System.out.println(collect2);
 
+
 //        20. Remove nulls from a list
 //        Input: [null, "apple", null, "banana"]
 //        Output: ["apple", "banana"]
